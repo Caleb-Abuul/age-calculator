@@ -1,0 +1,124 @@
+:root {
+  --primary-color: hsl(259, 100%, 65%);
+  --error-clr: hsl(0, 100%, 67%);
+
+  --neutral-white: hsl(0, 0%, 100%);
+  --neutral-off-white: hsl(0, 0%, 94%);
+  --neutral-light-grey: hsl(0, 0%, 86%);
+  --neutral-smokey-grey: hsl(0, 1%, 44%);
+  --neutral-off-black: hsl(0, 0%, 8%);
+
+  --fs-inputs: 2rem;
+  --fs-head: 0.8rem;
+  --fs-p: 0.75rem;
+  --fs-subhead: 3.125rem;
+
+  --margin-y: 2rem;
+  --padding: 3rem;
+  --border: 1rem;
+  --border-br: 10rem;
+  --gap: 1rem;
+
+  --input-padding: 0.5rem 1rem;
+  --input-margin-y: 0.25rem;
+  --input-width: 10rem;
+  --input-border: 0.5rem;
+
+  --clr-head: var(--neutral-smokey-grey);
+  --clr-input: var(--neutral-off-black);
+  --clr-error: var(--clr-error);
+
+  --fw-regular: 400;
+  --fw-semi-bold: 700;
+  --fw-bold: 800;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: "Poppins", sans-serif;
+}
+body {
+  max-width: 1240px;
+  min-width: 375px;
+  width: 100vw;
+  height: 100vh;
+  background: var(--neutral-light-grey);
+}
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  background: var(--neutral-white);
+  padding: var(--padding);
+  border-radius: var(--border);
+  border-bottom-right-radius: var(--border-br);
+  width: 800px;
+}
+.heading {
+  display: block;
+  font-size: var(--fs-head);
+  color: var(--clr-head);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.125rem;
+}
+.input-fields {
+  display: flex;
+  gap: var(--gap);
+}
+.inputs {
+  font-size: var(--fs-inputs);
+  color: var(--clr-input);
+  font-weight: var(--fw-semi-bold);
+  padding-block: var(--input-padding-y);
+  width: var(--input-width);
+  border-radius: var(--input-border);
+  padding: var(--input-padding);
+  margin-block: var(--input-margin-y);
+  outline: none;
+  border: 2px solid var(--neutral-light-grey);
+}
+.button {
+  /* background: var(--primary-color); */
+  position: relative;
+  margin-block: var(--margin-y);
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.button hr {
+  width: 90.2344%;
+}
+.button div {
+  background: var(--primary-color);
+  width: 3.125rem;
+  height: 3.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100vmax;
+  cursor: pointer;
+}
+.button div:hover {
+  background: var(--neutral-off-black);
+}
+.button div > img {
+  width: 2rem;
+  height: 2rem;
+}
+.text {
+  font-size: var(--fs-subhead);
+  font-weight: var(--fw-bold);
+  color: var(--neutral-off-black);
+  line-height: 1;
+}
+.text span {
+  color: var(--primary-color);
+}
