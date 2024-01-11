@@ -23,6 +23,8 @@
 
     <link rel="stylesheet" href="style.css" />
 
+    <script src="main.js" defer></script>
+
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
@@ -36,29 +38,41 @@
   </head>
   <body>
     <main>
-      <div class="card">
+      <form class="card" id="myForm">
         <div class="input-fields">
           <div>
-            <label for="errorDay" class="heading">DAY</label>
-            <input type="text" placeholder="DD" class="inputs" />
+            <label for="bornDay" class="heading" id="heading-day">DAY</label>
+            <input type="number" placeholder="DD" class="inputs" id="bornDay" />
             <p id="errorDay" class="error"></p>
           </div>
           <div>
-            <label for="errorMonth" class="heading">MONTH</label>
-            <input type="text" placeholder="MM" class="inputs" />
+            <label for="bornMonth" class="heading" id="heading-month"
+              >MONTH</label
+            >
+            <input
+              type="number"
+              placeholder="MM"
+              class="inputs"
+              id="bornMonth"
+            />
             <p id="errorMonth" class="error"></p>
           </div>
           <div>
-            <label for="errorYear" class="heading">YEAR</label>
-            <input type="text" placeholder="YYYY" class="inputs" />
+            <label for="bornYear" class="heading" id="heading-year">YEAR</label>
+            <input
+              type="number"
+              placeholder="YYYY"
+              class="inputs"
+              id="bornYear"
+            />
             <p id="errorYear" class="error"></p>
           </div>
         </div>
         <div class="button">
           <hr />
-          <div id="btn">
+          <button id="btn" type="submit">
             <img src="assets/images/icon-arrow.svg" alt="Arrow down button" />
-          </div>
+          </button>
         </div>
         <div class="text">
           <h2>
@@ -71,7 +85,7 @@
             <i><span>- -</span> days</i>
           </h2>
         </div>
-      </div>
+      </form>
     </main>
 
     <div class="attribution">

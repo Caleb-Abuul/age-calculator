@@ -96,7 +96,7 @@ main {
 .button hr {
   width: 90.2344%;
 }
-.button div {
+.button button {
   background: var(--primary-color);
   width: 3.125rem;
   height: 3.125rem;
@@ -105,11 +105,13 @@ main {
   justify-content: center;
   border-radius: 100vmax;
   cursor: pointer;
+  outline: none;
+  border: 0;
 }
-.button div:hover {
+.button button:hover {
   background: var(--neutral-off-black);
 }
-.button div > img {
+.button button > img {
   width: 2rem;
   height: 2rem;
 }
@@ -121,4 +123,12 @@ main {
 }
 .text span {
   color: var(--primary-color);
+}
+.error {
+  color: var(--error-clr);
+  font-size: 0.875rem;
+  font-weight: var(--fw-regular);
+}
+.error-heading {
+  color: var(--error-clr);
 }
