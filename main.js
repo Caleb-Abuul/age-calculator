@@ -1,16 +1,20 @@
 const grabItem = (id) => document.getElementById(id);
-
+const displayItem = (element, message) => element.innerText = message;
+    
 
 let myForm = grabItem('myForm');
 let currentDate = new Date();
 let currYear = currentDate.getFullYear();
 let currMonth = currentDate.getMonth() + 1;
+console.log(currMonth);
 let currDay = currentDate.getDate();
 
 
 let headingDay = document.querySelector('#heading-day');
 let headingMonth = document.querySelector('#heading-month');
 let headingYear = document.querySelector('#heading-year');
+
+let displayYear = grabItem('display-year'), displayMonth = grabItem('display-month'), displayDay = grabItem('display-day');
 
 myForm.addEventListener('submit', (e)=>{
     e.preventDefault();
@@ -67,8 +71,31 @@ function validateDay(){
     }
 
     // calculate age
-    if (inputMonthValue < currMonth){
-        let years = (currYear - inputYear) - 1;
+    if (currMonth < inputMonthValue){
+        if (inputDayValue < currDay){
+            let years = (currYear - 1) - inputYearValue;
+            let months = 12 - (inputMonthValue - currMonth);
+            let days = currDay - inputDayValue;
+
+            console.log(years, months, days);
+            console.log('hello');
+
+            displayItem(displayYear, years);
+            displayItem(displayMonth, months);
+            displayItem(displayDay, days);
+        } else if (inputDayValue > currDay){
+            let years = (currYear - 1) - inputYearValue;
+            let months = 11 - (inputMonthValue - currMonth);
+            let days = (inputDayValue - currDay) + currDay;
+
+            console.log(years, months, days);
+            console.log('hello');
+
+            displayItem(displayYear, years);
+            displayItem(displayMonth, months);
+            displayItem(displayDay, days);
+        }
+        
         
     }
 }
