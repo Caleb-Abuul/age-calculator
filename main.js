@@ -39,19 +39,23 @@ function validateDay(){
         if (inputDayValue > 30){
             let error = document.getElementById('errorDay');
             displayErrorMessage(error, 'Must be a valid day');
+            return;
         } 
     } else if (inputMonthValue > 12){
         let error = grabItem('errorMonth');
         displayErrorMessage(error, 'Must be a valid month');
+        return;
     } else if (inputMonthValue == '02'){
         if (inputDayValue > 29){
             let error = grabItem('errorDay');
             displayErrorMessage(error, 'Must be a valid day');
+            return;
         }
     } else if (inputMonthValue == '01' || inputMonthValue == '03' || inputMonthValue == '05' || inputMonthValue == '07' || inputMonthValue == '08' || inputMonthValue == '10' || inputMonthValue == '12'){
         if (inputDayValue > 31){
             let error = grabItem('errorDay');
             displayErrorMessage(error, 'Must be a valid day');
+            return;
         }
     } else {
         // let errorDay, errorMonth, errorYear = [grabItem('errorDay'), grabItem('errorMonth'), grabItem('errorYear')];
@@ -64,10 +68,13 @@ function validateDay(){
         displayErrorMessage(errorDay, msg);
         displayErrorMessage(errorMonth, msg);
         displayErrorMessage(errorYear, msg);
+
+        return;
     }
     if (inputYearValue > currYear){
         let errorYear = grabItem('errorYear');
         displayErrorMessage(errorYear, 'Must be in the past');
+        return;
     }
 
     // calculate age
@@ -86,7 +93,7 @@ function validateDay(){
         } else if (inputDayValue > currDay){
             let years = (currYear - 1) - inputYearValue;
             let months = 11 - (inputMonthValue - currMonth);
-            let days = (inputDayValue - currDay) + currDay;
+            let days = inputDayValue - currDay;
 
             console.log(years, months, days);
             console.log('hello');
@@ -94,9 +101,62 @@ function validateDay(){
             displayItem(displayYear, years);
             displayItem(displayMonth, months);
             displayItem(displayDay, days);
+        } else {
+            let years = (currYear - 1) - inputYearValue;
+            let months = 12 - (inputMonthValue - currMonth);
+            let days = currDay - inputDayValue;
+
+            displayItem(displayYear, years);
+            displayItem(displayMonth, months);
+            displayItem(displayDay, days);
         }
         
         
+    } else if (currMonth > inputMonthValue){
+        let years = currYear - inputYearValue;
+        if (inputDayValue < currDay){
+            
+            let months = (inputMonthValue - 1) - currMonth;
+            let days = currDay - inputDayValue;
+
+            displayItem(displayYear, years);
+            displayItem(displayMonth, months);
+            displayItem(displayDay, days);
+        } else if (inputDayValue > currDay){
+            let months = inputMonthValue - currMonth;
+            let days = inputDayValue - currDay;
+
+            displayItem(displayYear, years);
+            displayItem(displayMonth, months);
+            displayItem(displayDay, days);
+        } else {
+            let months = inputMonthValue - currMonth;
+            let days = inputDayValue - currDay;
+
+            displayItem(displayYear, years);
+            displayItem(displayMonth, months);
+            displayItem(displayDay, days);
+        }
+        
+    } else{
+        
+        if (currDay < inputDayValue){
+            let years = (currYear - 1) - inputYearValue;
+            let months = 11 - (currMonth - inputMonthValue);
+            let days = 30 - (inputDayValue - currDay);
+
+            displayItem(displayYear, years);
+            displayItem(displayMonth, months);
+            displayItem(displayDay, days);
+        } else if (currDay > inputDayValue){
+            let years = currYear - inputYearValue;
+            let months = currMonth - inputMonthValue;
+            let days = currDay - inputDayValue;
+
+            displayItem(displayYear, years);
+            displayItem(displayMonth, months);
+            displayItem(displayDay, days);
+        }
     }
 }
 
