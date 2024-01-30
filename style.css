@@ -132,3 +132,6 @@ main {
 .error-heading {
   color: var(--error-clr);
 }
+.error-border {
+  border: 1rem solid var(--error-clr);
+}
