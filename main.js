@@ -115,15 +115,15 @@ function calculateAge(year, month, day){
             let months = 11 - (month - currentMonth);
             let days = 30 - (day - currentDay);
 
-            showAge(years, months, days);
+            animateAge(years, months, days);
         } else if (day < currentDay){
             let months = 12 - currentMonth;
             let days = currentDay - day;
-            showAge(years, months, days);
+            animateAge(years, months, days);
         } else if (day == currentDay){
             let months = 12 - currentMonth;
             let days = currentDay - day;
-            showAge(years, months, days);
+            animateAge(years, months, days);
         }
     } else if (month < currentMonth){
         let years = currentYear - year;
@@ -131,15 +131,15 @@ function calculateAge(year, month, day){
             let months = 11 - (month - currentMonth);
             let days = 30 - (day - currentDay);
 
-            showAge(years, months, days);
+            animateAge(years, months, days);
         } else if (day < currentDay){
             let months = 12 - currentMonth;
             let days = currentDay - day;
-            showAge(years, months, days);
+            animateAge(years, months, days);
         } else if (day == currentDay){
             let months = 12 - currentMonth;
             let days = currentDay - day;
-            showAge(years, months, days);
+            animateAge(years, months, days);
         }
     } else if (month == currentMonth){
         let years = currentYear - year;
@@ -148,24 +148,53 @@ function calculateAge(year, month, day){
             let months = 11 - (month - currentMonth);
             let days = 30 - (day - currentDay);
 
-            showAge(years, months, days);
+            animateAge(years, months, days);
         } else if (day < currentDay){
             let months = currentMonth - month;
             let days = currentDay - day;
-            showAge(years, months, days);
+            animateAge(years, months, days);
         } else if (day == currentDay){
             let months = month - currentMonth;
             let days = currentDay - day;
-            showAge(years, months, days);
+            animateAge(years, months, days);
         }
     }
 }
 
-function showAge(year, month, day){
-    displayAge('display-year', year);
-    displayAge('display-month', month);
-    displayAge('display-day', day);
+function animateAge(ageYear, ageMonth, ageDay){
+    let loadDay = 0, loadMonth = 0, loadYear = 0;
+    let timerDay = setInterval(animateDay, 60);
+    let timerMonth = setInterval(animateMonth, 40)
+    let timerYear = setInterval(animateYear, 20);
+    function animateDay(){
+        loadDay++;
+
+        if (loadDay == ageDay){
+            clearInterval(timerDay);
+        }
+
+        displayAge('display-day', loadDay);
+    }
+
+    function animateMonth(){
+        loadMonth++;
+
+        if (loadMonth == ageMonth){
+            clearInterval(timerMonth);
+        }
+        displayAge('display-month', loadMonth);
+    }
+    
+    function animateYear(){
+        loadYear++;
+
+        if (loadYear == ageYear){
+            clearInterval(timerYear);
+        }
+        displayAge('display-year', loadYear);
+    }
 }
+
 
 
 
