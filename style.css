@@ -60,7 +60,7 @@ main {
   padding: var(--padding);
   border-radius: var(--border);
   border-bottom-right-radius: var(--border-br);
-  width: 800px;
+  width: min(80vw, 800px);
 }
 .heading {
   display: block;
@@ -76,7 +76,7 @@ main {
 .inputs {
   font-size: var(--fs-inputs);
   color: var(--clr-input);
-  font-weight: var(--fw-semi-bold);
+  font-weight: var(--fw-bold);
   padding-block: var(--input-padding-y);
   width: var(--input-width);
   border-radius: var(--input-border);
@@ -134,4 +134,32 @@ main {
 }
 .error-border {
   border: 1rem solid var(--error-clr);
+}
+
+@media (max-width: 375px) {
+  .card {
+    border-bottom-right-radius: 5rem;
+  }
+  .input-fields {
+    width: 100%;
+    gap: 0.5rem;
+  }
+  .inputs {
+    width: 4rem;
+    font-size: 1rem;
+    padding-inline: 0.5rem;
+  }
+  .heading {
+    font-size: 0.6rem;
+  }
+  .button button {
+    position: absolute;
+    left: 40%;
+  }
+  .button > hr {
+    width: 100%;
+  }
+  .text {
+    font-size: 1.5rem;
+  }
 }
