@@ -1,14 +1,8 @@
 const grabItem = (id) => document.getElementById(id);
-let ageForm = grabItem('myForm');
 const displayError = (element, message) => document.getElementById(element).innerText = message;
-
 const displayAge = (element, age) => document.getElementById(element).innerText = age;
 
-let currentDate = new Date();
-let currentDay = currentDate.getDate();
-let currentMonth = currentDate.getMonth() + 1;
-let currentYear = currentDate.getFullYear();
-let isError = false;
+let ageForm = grabItem('myForm'), currentDate = new Date(), currentDay = currentDate.getDate(), currentMonth = currentDate.getMonth() + 1, currentYear = currentDate.getFullYear(), isError = false;
 
 
 ageForm.addEventListener('submit', (e)=>{
