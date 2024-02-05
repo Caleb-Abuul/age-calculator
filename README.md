@@ -39,7 +39,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [View project on Frontend mentor](https://your-solution-url.com)
+- Solution URL: [View project on Frontend mentor](https://www.frontendmentor.io/solutions/age-calculator-app-E7WAf7pamB)
 - Live Site URL: [Age calculator](https://caleb-abuul.github.io/age-calculator/)
 
 ## My process
